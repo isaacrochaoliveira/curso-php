@@ -8,11 +8,14 @@
 </head>
 <body>
     <header>
-        <h1>Expressões Ariméticas</h1>
+        <h1>Ordem de Precidência</h1>
     </header>
     <section>
         <?php 
-            
+            echo "4° - **<br>";
+            echo "3° - * - / - %<br>";
+            echo "2° - + - -<br>";
+            echo "1° - ()<br>";
         ?>
     </section>
 </body>
