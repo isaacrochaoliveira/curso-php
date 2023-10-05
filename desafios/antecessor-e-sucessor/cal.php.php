@@ -15,9 +15,7 @@
     <section>
         <?php
         $n = $_GET['n'] ?? "0";
-        $ante = $n - 1;
-        $suce = $n + 1;
-        echo "O número escolhido foi $n<br>O seu antecessor é $ante<br>O seu sucessor é $suce";
+        echo "O número escolhido foi $n<br>O seu antecessor é ". $n - 1 .".<br>O seu sucessor é ". $n + 1;
         ?>
     </section>
 </body>
