@@ -13,7 +13,10 @@
     <section>
         <p>Gerando um número Aleatório entr 0 e 100...</p>
         <?php 
-            $ale = random_int(0, 100);
+            //$ale = rand(0, 100) = Ele usa um algoritmo criado em 1951 = Linear Congretial Generator;
+            // $ale = mt_rand() = Algoritmo dessa função saiu em 1997 = Mersenne Twister
+            //random_int() gera número aleatórios criptograficamente seguros
+            $ale = mt_rand(0, 100);
             echo "O valor gerador foi $ale";
         ?>
         <p><a href="./index.php">&#x1F61C; Gerar Outro</a></p>
