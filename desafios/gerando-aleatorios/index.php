@@ -17,7 +17,7 @@
             // $ale = mt_rand() = Algoritmo dessa função saiu em 1997 = Mersenne Twister
             //random_int() gera número aleatórios criptograficamente seguros
             $ale = mt_rand(0, 100);
-            echo "O valor gerador foi $ale";
+            echo "O valor gerador foi <strong>$ale</strong>";
         ?>
         <p><a href="./index.php">&#x1F61C; Gerar Outro</a></p>
     </section>
