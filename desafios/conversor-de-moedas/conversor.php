@@ -17,12 +17,17 @@
 
         $dolar = $reais / 5.17;
 
-        $reaisF = number_format($reais, 2, ',', '.');
-        $dolarF = number_format($dolar, 2, ',', '.');
+        // Jeito Tradicional
+        //$reaisF = number_format($reais, 2, ',', '.');
+        //$dolarF = number_format($dolar, 2, ',', '.');
 
-        echo "Seus R$ $reaisF equivalem US$$dolarF";
+        //Jeito Profissional com Internacionalização
+        // Biblioteca = intl (Internallization PHP)
+        $padrao = numfmt_create('pt_BR', NumberFormatter::CURRENCY);
+
+        echo "Seus ". numfmt_format_currency($padrao, $reais, "BRL") ." equivalem ". numfmt_format_currency($padrao, $dolar, "USD");
         ?>
-        <a href="./index.html">Voltar</a>
+        <p><a href="./index.html">Voltar</a></p>
     </section>
 </body>
 </html>
