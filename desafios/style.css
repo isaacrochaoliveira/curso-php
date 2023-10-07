@@ -26,7 +26,7 @@ header, main, section, article {
     max-width: 700px;
 }
 
-header > h1{
+header > h1 {
     color: white;
     text-shadow: 3px 3px 0px black;
 }
