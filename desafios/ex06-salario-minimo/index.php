@@ -7,18 +7,15 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    <?php 
+z    <?php 
         $sal = $_POST['sal'] ?? 1000;
-        $sal_min = 998;
-        $qtde_sal = $sal / $sal_min;
-
+        $sal_min = 1000;
+        $qtde_sal = intdiv($sal, $sal_min);
         $resto = $sal % $sal_min;
 
         $padrao = numfmt_create('pt_BR', NumberFormatter::CURRENCY);
-
         $salF = numfmt_format_currency($padrao, $sal, 'BRL');
         $restoF = numfmt_format_currency($padrao, $resto, 'BRL');
-        $qtde_salF = number_format($qtde_sal, 0, ',', '.');
     ?>
     <main>
         <h1>Informe seu Salário</h1>
@@ -35,7 +32,7 @@
         <?php 
             echo <<< HTML
                 <p>
-                    Quem Recebe um salário de $salF ganha <strong>$qtde_salF salários minimos</strong> + $restoF
+                    Quem Recebe um salário de $salF ganha <strong>$qtde_sal salários minimos</strong> + $restoF
                 </p>
             HTML;
         ?>

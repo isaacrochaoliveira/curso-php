@@ -34,8 +34,8 @@
 </head>
 <body>
     <?php 
-        $dividendo = $_POST['dividendo'] ?? 0;
-        $divisor = $_POST['divisor'] ?? 0;
+        $dividendo = $_POST['dividendo'] ?? 8;
+        $divisor = $_POST['divisor'] ?? 3;
         
         $valor =  intdiv($dividendo, $divisor);
         $resto = $dividendo % $divisor;
