@@ -36,15 +36,7 @@
             echo "Analisando os valores $x1 e $x2<br>";
 
             $média = ($x1 + $x2) / 2;
-            $ponderada = (($p1 * $x1) + ($p2 * $x2)) / $p1 + $p2;
-
-            $dividendo = ($p1 * $x1) + ($p2 * $x1);
-            $divisor = $p1 + $p2;
-            $ponderada = $dividendo / $divisor;
-
-            echo $dividendo."<br>";
-            echo $divisor;
-
+            $ponderada = ($x1 * $p1 + $x2 * $p2) / ($p1 + $p2);
 
             echo "<ul><li>A <strong>Média Aritimética Simple</strong> entre os valores é igual a " . number_format($média, 2, ',', '.') . "</li>";
             echo "<li>A <strong>Média Aritimética Ponderada</strong> entre os valores é igual a " . number_format($ponderada, 2, ',', '.');
