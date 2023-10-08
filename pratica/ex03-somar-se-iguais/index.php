@@ -28,7 +28,7 @@
                 if ($a == $b) {
                     echo "A e B são Iguais, portanto $a + $b = ". $a + $b;
                 } else {
-                    echo "A e B são diferentes";
+                    echo "A e B são diferentes, portando $a x $b = ". $a * $b;
                 }
             ?>
         </p>
