@@ -10,11 +10,20 @@
     <?php 
         $tempo = $_POST['tempo'] ?? 1234000;
       
-        $hr = intdiv($tempo, 3600);
-        $dia = intdiv($hr, 24);
-        $min = intdiv($tempo, 60);
+        $sem = $tempo / 604.800;
+        $sem_resto = $tempo % 604.800;
+        
+        $dia = intdiv($sem_resto, 86.400);
+        $dia_resto = $sem_resto % 86.400;
+
+        
+        $hr = intdiv($dia_resto, 3600);
+        $hr_resto = $dia_resto % 3600;
+        
+        $min = intdiv($hr_resto, 60);
+        
         $seg = $tempo % 60;
-    ?>
+        ?>
     <header>
         <h1>Calculadora de Tempo</h1>
     </header>
@@ -30,8 +39,12 @@
         <?php 
             echo "Analisando o valor que você digitou: " . number_format($tempo, 0, ',', '.') . " equivalem a um total de:";
 
+            echo $sem_resto;
             echo <<< HTML
                 <ul>
+                    <li>
+                        $sem Semanas
+                    </li>
                     <li>
                         $dia Dias
                     </li>

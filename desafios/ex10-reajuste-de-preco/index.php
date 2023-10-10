@@ -10,7 +10,7 @@
     <?php 
         
         $preco = $_POST['preco'] ?? 1000;
-        $reajuste = $_POST['reajuste'] ?? 10;
+        $reajuste = $_POST['reajuste'] ?? 0;
         
         $r = $preco + ($preco * $reajuste / 100);
         
@@ -24,7 +24,7 @@
             <label for="preco">Preço do Produto</label>
             <input type="number" name="preco" id="preco" value="<?= $preco ?>" step="0.01">
             <label for="reajuste">Qual será o percentual do reajuste? ( <strong><span id="p">?</span>%</strong> )</label>
-            <input type="range" name="reajuste" id="reajuste" min="0" max="100" step="1" oninput="mudaValor()">
+            <input type="range" name="reajuste" id="reajuste" min="0" max="100" step="1" oninput="mudaValor()" value="<?= $reajuste ?>">
             <input type="submit" value="Reajustar">
         </form>
     </main>
@@ -35,6 +35,8 @@
         ?>
     </section>
     <script>
+        mudaValor();
+
         function mudaValor() {
             p.innerText = reajuste.value;
         }
