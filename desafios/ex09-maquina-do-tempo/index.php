@@ -19,7 +19,7 @@
     <main>
         <form action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
             <label for="nasc">Em que ano você nasceu?</label>
-            <input type="number" name="nasc" id="nasc" value="<?= $ano_nasc?>">
+            <input type="number" name="nasc" id="nasc" value="<?= $ano_nasc?>" max="<?= Date('Y') - 1?>">
             <label for="ano_atual">Quer saber sua idade em que ano? (Atualmente estamos em 2023)</label>
             <input type="number" name="ano_atual" id="ano_atual" value="<?= $ano_atual ?>">
             <input type="submit" value="Qual será minha idade?">
