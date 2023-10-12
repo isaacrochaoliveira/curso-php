@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desafio PHP</title>
     <link rel="stylesheet" href="../style.css">
+    <style>
+        img.nota {
+            height: 50px;
+            margin: 5px;
+        }
+    </style>
 </head>
 <body>
     <?php 
@@ -34,8 +40,8 @@
             $_50 = intdiv($sobra, 50);
             $sobra = $sobra % 50;
 
-            $_20 = intdiv($sobra, 20);
-            $sobra = $sobra % 20;
+            // $_20 = intdiv($sobra, 20);
+            // $sobra = $sobra % 20;
 
             $_10 = intdiv($sobra, 10);
             $sobra = $sobra % 10;
@@ -46,23 +52,23 @@
         <p>O Caixa Eletrônico vai te entregar as segunites notas:</p>
         <ul>
             <li>
-                <img src="100-reais.jpg" alt="">
+                <img src="100-reais.jpg" class="nota" alt="">
                 x<?= $_100 ?>
             </li>
             <li>
-                <img src="50-reais.jpg" alt="">
+                <img src="50-reais.jpg" alt="" class="nota">
                 x<?= $_50 ?>
             </li>
-            <li>
+            <!-- <li>
                 <img src="20-reais.jpg" alt="">
                 x<?= $_20 ?>
-            </li>
+            </li> -->
             <li>
-                <img src="10-reais.jpg" alt="">
+                <img src="10-reais.jpg" alt="" class="nota">
                 x<?= $_10 ?>
             </li>
             <li>
-                <img src="5-reais.jpg" alt="">
+                <img src="5-reais.jpg" alt="" class="nota">
                 x<?= $_5 ?>
             </li>
         </ul>
