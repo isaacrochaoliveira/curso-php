@@ -8,21 +8,20 @@
 </head>
 <body>
     <?php 
-        $tempo = $_POST['tempo'] ?? 1234000;
+        $tempo = $_POST['tempo'] ?? 2_000_000;
+        $sobra = $tempo;
       
-        $sem = $tempo / 604.800;
-        $sem_resto = $tempo % 604.800;
+        $sem = intdiv($sobra, 604_800);
+        $sobra = $sobra % 604_800;
         
-        $dia = intdiv($sem_resto, 86.400);
-        $dia_resto = $sem_resto % 86.400;
+        $dia = intdiv($sobra, 86_400);
+        $sobra = $sobra % 86_400;
 
+        $hr = intdiv($sobra, 3_600);
+        $sobra = $sobra % 3_600;
         
-        $hr = intdiv($dia_resto, 3600);
-        $hr_resto = $dia_resto % 3600;
-        
-        $min = intdiv($hr_resto, 60);
-        
-        $seg = $tempo % 60;
+        $min = intdiv($sobra, 60);
+        $sobra = $sobra % 60;
         ?>
     <header>
         <h1>Calculadora de Tempo</h1>
@@ -39,7 +38,6 @@
         <?php 
             echo "Analisando o valor que você digitou: " . number_format($tempo, 0, ',', '.') . " equivalem a um total de:";
 
-            echo $sem_resto;
             echo <<< HTML
                 <ul>
                     <li>
@@ -55,7 +53,7 @@
                         $min Minutos
                     </li>
                     <li>
-                        $seg Segundos
+                        $sobra Segundos
                     </li>
                 </ul>
             HTML;
