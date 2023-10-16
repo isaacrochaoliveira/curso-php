@@ -8,31 +8,27 @@
 </head>
 <body>
     <?php 
-        $j1 = "Ana";
-        $j2 = "João";
-        $j3 = "Maria";
-        $j4 = "Paula";
+        $names = ['Ana', 'Milena', 'Paula', 'Melissa'];
+        $randoms = [mt_rand(1, 20), mt_rand(1, 20), mt_rand(1, 20), mt_rand(1, 20)];
 
-        // Random
-        $random_1 = mt_rand(1, 20);
-        $random_2 = mt_rand(1, 20);
-        $random_3 = mt_rand(1, 20);
-        $random_4 = mt_rand(1, 20);
-
+        $winners = [];
+        $numbers_winners = [];
     ?>
     <main>
         <h1>Jogo dos Dados</h1>
-        <p>A <?= $j1 ?> Tirou <?= $random_1 ?></p>
-        <p>O <?= $j2 ?> Tirou <?= $random_2 ?></p>
-        <p>A <?= $j3 ?> Tirou <?= $random_3 ?></p>
-        <p>A <?= $j4 ?> Tirou <?= $random_4 ?></p>
+        <?php 
+            for ($i = 0; $i < count($names); $i++) {
+                echo "<p>A ". $names[$i] ." tirou " . $randoms[$i] . "</p>";
+            }
+        ?>
     </main>
     <section>
         <h2>Placar Final</h2>
-        <p>Em 1º Lugar: </p>
-        <p>Em 2º Lugar: </p>
-        <p>Em 3º Lugar: </p>
-        <p>Em 4º Lugar: </p>
+        <?php 
+            if () {
+                
+            }
+        ?>
     </section>
 </body>
 </html>
