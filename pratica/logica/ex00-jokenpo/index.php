@@ -47,6 +47,12 @@ $comp = 0;
         </form>
         <?php
             if (isset($_POST['num'])) {
+                /*
+                    I know, it's broken
+                    Maybe, Might, whatever
+                    However, I wanna go hoome, seems Joey talking
+                    What, 
+                */
                 $num = $_POST['num'];
                 $com = random_int(1, 3);
                 switch ($num) {
